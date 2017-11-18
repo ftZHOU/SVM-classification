@@ -14,8 +14,8 @@ y = iris.target
 
 # We learn the svm
 
-gamma = svm_tools.gamma_of_sigma(.75) # sigma=.75
-C     = 100
+gamma = svm_tools.gamma_of_sigma(.75) # gamma used in the rbf kernal who has an inverse relationship with the nb of the support vectors
+C     = 100 # with bigger C for higher penality of the mislabeling 
 classifier = sklearn.svm.SVC(C=C,
                              kernel='rbf', gamma=gamma,
                              tol=1e-5,
